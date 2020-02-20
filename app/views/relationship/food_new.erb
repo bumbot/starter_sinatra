@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I likey</title>
+</head>
+<body>
+    <h1> I. . . . Likey . . . The <%=@food.name%></h1>
+    <h3> Who Likey the <%=@food.name%></h3>
+    <form action="/relationship/food" method="post">
+        <input type="hidden" name="food" value=<%=@food.id%>>
+    <%Employee.all.each do |person| %>
+        <div>
+            <input type="checkbox" name="person[]" value=<%= person.id %>>
+            <label for="Employee"><%= person.name %> likey <%=@food.name%></label><br>
+            <input type="text" name="snippet[]" placeholder="Why you likey?">
+        </div>
+    <% end %>
+        
+
+        <input type="submit">
+    </form >
+
+    
+</body>
+</html>

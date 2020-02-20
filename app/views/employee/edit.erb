@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= @person.name%></title>
+</head>
+<body>
+    <h1>Editing <%= @person.name%>'s Information</h1>
+    <form action="/employees/<%=@person.id%>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="id" value="<%= @person.id %>">
+
+        <input type='text' name= "position" value="<%= @person.position %>" >
+        <div>
+            <label>Age:</label>
+            <select name="age">
+                <% (@person.age..100).to_a.each do|num|%>
+                    <option value= <%= num %>> <%= num %> </option>
+                <% end %>
+            </select>
+        </div>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

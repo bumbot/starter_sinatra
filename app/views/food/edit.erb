@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= @food.name%></title>
+</head>
+<body>
+    <h1>Editing <%= @food.name%>'s Information</h1>
+    <form action="/foods/<%=@food.id%>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="id" value="<%= @food.id %>">
+
+        <input type='text' name="name" value="<%= @food.name %>" >
+        <input type='text' name="description" value="<%= @food.description %>" >
+        <input type="submit">
+    </form>
+</body>
+</html>

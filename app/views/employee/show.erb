@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% @person.name %></title>
+</head>
+<body>
+    <h1>This is <%= @person.name %></h1>
+    <h3>I am a <%= @person.position %></h3>
+    <h3>I am <%= @person.age %> years old.</h3>
+
+    <a href="/">Back to Home</a>
+    <a href="/employees">Back to Employee List</a>
+    <a href="/employees/<%=@person.id%>/edit">Edit Employee</a>
+    <a href="/employees/<%=@person.id%>/delete">Delete</a>
+</body>
+</html>

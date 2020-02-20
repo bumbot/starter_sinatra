@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% @food.name %></title>
+</head>
+<body>
+    <h1>This is <%= @food.name %></h1>
+    <h3>Description: <%= @food.description %></h3>
+    <h3>People that like me . . . </h3>
+    <ol>
+        <% @food.employees.each do |x| %>
+           <li><a href="/employees/<%= x.id%>"> <%= x.name %> </a></li>
+
+        <% end %>
+
+    </ol>
+    <a href="/">Back to Home</a>
+    <a href="/foods">Back to Food List</a>
+    <a href="/foods/<%=@food.id%>/edit">Edit Food</a>
+    <a href="/foods/<%=@food.id%>/delete">Delete</a>
+    <a href="/relationship/food/<%=@food.id%>">Add to Favorite</a>
+    
+</body>
+</html>
